@@ -49,7 +49,7 @@ def print_graph(self):
         col.append(self.DG.node[transaction]["node_color"])
 
     #Creating figure
-    plt.figure(figsize=(14, 8))
+    plt.figure(figsize=(14, 7))
     nx.draw_networkx(self.DG, pos, with_labels=True, node_size = 100, font_size=5.5, node_color = col)
     # nx.draw_networkx_labels(self.DG, lower_pos, labels=labels, font_size=6)
 
@@ -68,7 +68,7 @@ def print_graph(self):
 
 def print_tips_over_time(self):
 
-    plt.figure(figsize=(14, 8))
+    plt.figure(figsize=(14, 7))
 
     #Get no of tips per time
     no_tips = []
@@ -106,7 +106,7 @@ def print_tips_over_time(self):
 
 def print_tips_over_time_multiple_agents_with_tangle(self, no_current_transactions):
 
-    plt.figure(figsize=(14, 8))
+    plt.figure(figsize=(14, 7))
     plt.subplot(2, 1, 1)
 
     #Get no of tips per time
@@ -187,7 +187,7 @@ def print_tips_over_time_multiple_agents_with_tangle(self, no_current_transactio
 
 def print_tips_over_time_multiple_agents(self, no_current_transactions):
 
-    plt.figure(figsize=(14, 8))
+    plt.figure(figsize=(14, 7))
 
     #Get no of tips per time
     for agent in self.agents:
@@ -241,7 +241,7 @@ def print_attachment_probabilities_alone(self):
     with open('subtangle_attach_prob.pkl', 'wb') as handle:
         pickle.dump(self.record_attachment_probabilities, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-    plt.figure(figsize=(14, 8))
+    plt.figure(figsize=(14, 7))
 
     x = np.squeeze([i[0] for i in self.record_attachment_probabilities])
     y = np.squeeze([i[1] for i in self.record_attachment_probabilities])
@@ -299,15 +299,15 @@ def print_attachment_probabilities_all_agents(self):
 
     data = []
 
-    for agent in range(10):
+    for agent in range(self.no_of_agents):
         agent_data = [i[1][agent] for i in self.record_attachment_probabilities]
         data.append(agent_data)
 
     plt.boxplot(data, 0, '+')
     plt.xlabel("Agents")
-    plt.xticks(np.arange(1, 11), np.arange(0, 10))
+    plt.xticks(np.arange(1, self.no_of_agents+1), np.arange(0, self.no_of_agents))
     plt.suptitle(title)
     plt.tight_layout()
     plt.subplots_adjust(top=0.94)
-    # plt.show()
+    plt.show()
     # plt.savefig(str(no) + '.png')

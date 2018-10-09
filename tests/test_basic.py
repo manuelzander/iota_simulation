@@ -14,7 +14,7 @@ distances = [
 
 class SimulationSetupAndRunTestSuite(unittest.TestCase):
     def setUp(self):
-        self.simu = Multi_Agent_Simulation(100, 10, 2, 0.005, 1, distances, "weighted")
+        self.simu = Multi_Agent_Simulation(100, 50, 2, 0.1, 1, "weighted", _printing=True)
 
     def tearDown(self):
         pass
@@ -32,7 +32,7 @@ class SimulationSetupAndRunTestSuite(unittest.TestCase):
 
 class AfterSimulationWeightedRandomWalkTestSuite(unittest.TestCase):
     def setUp(self):
-        self.simu = Multi_Agent_Simulation(100, 10, 2, 0.005, 1, distances, "weighted")
+        self.simu = Multi_Agent_Simulation(100, 50, 2, 0.1, 1, "weighted", _printing=True)
         self.simu.setup()
         self.simu.run()
 

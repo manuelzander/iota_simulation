@@ -8,7 +8,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-The code is run and tested with Python 3.6.3 on macOS 10.12.6.
+The code is run and tested with Python 3.6.3 and 3.7 on macOS 10.12.6., 10.13 and 10.14.
 Create a virtual environment for Python 3 with:
 
 ```
@@ -17,7 +17,14 @@ virtualenv -p python3 envname
 
 ### Installing packages
 
-The used Python libraries/packages can be installed with:
+Pip's install of pygraphviz is currently broken, thus run the following before using the makefile:
+
+```
+brew install graphviz
+pip3 install pygraphviz
+```
+
+Then the used Python libraries/packages can be installed with:
 
 ```
 make
@@ -54,4 +61,8 @@ In this file you can also change the configurations of the simulation.
 
 ## License
 
+See LICENSE.txt
+
 ## Acknowledgments
+
+Many thanks to Dominik Harz (nud3l) for his help and suggestions during development of this software.

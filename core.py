@@ -35,14 +35,9 @@ from simulation.simulation_multi_agent import Multi_Agent_Simulation
 start_time = timeit.default_timer()
 runs = 1
 
-number_of_agents = 10
-distances = create_random_graph_distances(number_of_agents)
-
-# distances = [[0.0, 80.0, 40.0, 60.0, 80.0, 40.0, 40.0, 20.0, 60.0, 40.0], [80.0, 0.0, 80.0, 60.0, 40.0, 80.0, 80.0, 60.0, 20.0, 40.0], [40.0, 80.0, 0.0, 60.0, 80.0, 40.0, 20.0, 20.0, 60.0, 40.0], [60.0, 60.0, 60.0, 0.0, 60.0, 60.0, 60.0, 40.0, 40.0, 20.0], [80.0, 40.0, 80.0, 60.0, 0.0, 80.0, 80.0, 60.0, 20.0, 40.0], [40.0, 80.0, 40.0, 60.0, 80.0, 0.0, 40.0, 20.0, 60.0, 40.0], [40.0, 80.0, 20.0, 60.0, 80.0, 40.0, 0.0, 20.0, 60.0, 40.0], [20.0, 60.0, 20.0, 40.0, 60.0, 20.0, 20.0, 0.0, 40.0, 20.0], [60.0, 20.0, 60.0, 40.0, 20.0, 60.0, 60.0, 40.0, 0.0, 20.0], [40.0, 40.0, 40.0, 20.0, 40.0, 40.0, 40.0, 20.0, 20.0, 0.0]]
-
 for i in range(runs):
 
-    simu2 = Multi_Agent_Simulation(1000, 50, 2, 0.005, 1, "weighted", _agent_choice=[0.7,0.3], _printing=True)
+    simu2 = Multi_Agent_Simulation(800, 50, 2, 0.1, 1, "weighted", _printing=True)
     simu2.setup()
     simu2.run()
     # csv_export(simu2)
@@ -53,7 +48,8 @@ print("TOTAL simulation time: " + str(np.round(timeit.default_timer() - start_ti
 # PLOTTING
 #############################################################################
 
-print_graph(simu2)
-print_tips_over_time(simu2)
-print_tips_over_time_multiple_agents(simu2, simu2.no_of_transactions)
+# print_graph(simu2)
+# print_tips_over_time(simu2)
+# print_tips_over_time_multiple_agents(simu2, simu2.no_of_transactions)
 print_tips_over_time_multiple_agents_with_tangle(simu2, simu2.no_of_transactions)
+# print_attachment_probabilities_all_agents(simu2)

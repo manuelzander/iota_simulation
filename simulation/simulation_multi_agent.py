@@ -140,7 +140,7 @@ class Multi_Agent_Simulation:
 
             #Do something every 100th transition
             if (transaction.id >= 0 and
-                transaction.id % 200 == 0):
+                transaction.id % 100 == 0):
                 self.record_attachment_probabilities.append((transaction.id,self.calc_attachment_probabilities(transaction)))
                 # self.record_attachment_probabilities.append(self.calc_attachment_probabilities(transaction))
 
@@ -517,7 +517,7 @@ class Multi_Agent_Simulation:
 
         # print(attachment_probabilities_without_main)
         # print(attachment_probabilities_all)
-        return attachment_probabilities_without_main
+        return attachment_probabilities_all
 
     #Performs 100 random walks per agent to caluclate attachment probabilities
     def attachment_probabilities_2(self, incoming_transaction):

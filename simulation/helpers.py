@@ -46,11 +46,10 @@ def create_random_graph_distances(no_of_agents):
 
     distances = (nx.floyd_warshall_numpy(G)).tolist()
 
-    print(nx.closeness_centrality(G))
-
+    print("Closeness centrality per agent:  " + str(nx.closeness_centrality(G)))
 
     # print the random graph
-    # nx.draw(G, with_labels=True)
+    nx.draw(G, with_labels=True)
     # plt.savefig('agent_graph.png')
 
     return distances
