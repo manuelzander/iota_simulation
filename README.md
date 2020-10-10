@@ -49,10 +49,10 @@ In this file you can also change the configuration of the simulation.
 
 ## Run tests
 
-`unittest` is used for testing.
+`pytest` is used for testing.
 Run the tests with:
 
-    python -m unittest discover
+    pytest
 
 ## Authors
 
