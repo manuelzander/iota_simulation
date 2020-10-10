@@ -1,4 +1,6 @@
-# IOTA Tangle simulation in Python
+# Python IOTA Tangle simulation
+
+![status](https://img.shields.io/github/workflow/status/manuelzander/iota_simulation/iota_simulation/master?label=actions&logo=github&style=for-the-badge) ![last-commit](https://img.shields.io/github/last-commit/manuelzander/iota_simulation/master?logo=github&style=for-the-badge) ![issues-pr-raw](https://img.shields.io/github/issues-pr-raw/manuelzander/iota_simulation?label=open%20prs&logo=github&style=for-the-badge) [![license](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 This is a Python implementation of a *single- and multi-agent simulation* of the IOTA Tangle, as described in the [white-papers](https://www.iota.org/foundation/research-papers).
 
